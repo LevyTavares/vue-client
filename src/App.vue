@@ -1,15 +1,15 @@
 <script setup>
-import { ref } from 'vue';
-import MeuComponente from './components/MeuComponente.vue';
-import DadosCadastrados from './components/DadosCadastrados.vue';
+import { ref } from "vue";
+import MeuComponente from "./components/MeuComponente.vue";
+import DadosCadastrados from "./components/DadosCadastrados.vue";
 
 // Estado reativo do formulário
 const formState = ref({
-  nome: '',
-  email: '',
-  telefone: '',
-  cpf: '',
-  endereco: '',
+  nome: "",
+  email: "",
+  telefone: "",
+  cpf: "",
+  endereco: "",
 });
 
 // Variável para controlar qual componente exibir
@@ -23,54 +23,66 @@ const handleSubmit = (event) => {
 </script>
 
 <template>
-  <header class="header">
-    <h2 class="titulo">Formulário de Cadastro</h2>
-    <p class="subtitulo">Preencha os campos abaixo:</p>
-  </header>
-  <div class="centraliza">
-    <main v-if="!showData">
-      <h1>Cadastro de Clientes</h1>
-      <form @submit="handleSubmit">
-        <MeuComponente
-          label="Nome:"
-          placeholder="Digite seu nome"
-          v-model="formState.nome"
-        />
-        <MeuComponente
-          label="Email:"
-          placeholder="Digite seu email"
-          v-model="formState.email"
-        />
-        <MeuComponente
-          label="Telefone:"
-          placeholder="Digite seu telefone"
-          v-model="formState.telefone"
-        />
-        <MeuComponente
-          label="CPF:"
-          placeholder="Digite seu CPF"
-          v-model="formState.cpf"
-        />
-        <MeuComponente
-          label="Endereço:"
-          placeholder="Digite seu endereço"
-          v-model="formState.endereco"
-        />
+  <div class="app-container">
+    <header class="header">
+      <h2 class="titulo">Formulário de Cadastro</h2>
+      <p class="subtitulo">Preencha os campos abaixo:</p>
+    </header>
+    <div class="centraliza">
+      <main v-if="!showData">
+        <h1>Cadastro de Clientes</h1>
+        <form @submit="handleSubmit">
+          <MeuComponente
+            label="Nome:"
+            placeholder="Digite seu nome"
+            v-model="formState.nome"
+          />
+          <MeuComponente
+            label="Email:"
+            placeholder="Digite seu email"
+            v-model="formState.email"
+          />
+          <MeuComponente
+            label="Telefone:"
+            placeholder="Digite seu telefone"
+            v-model="formState.telefone"
+          />
+          <MeuComponente
+            label="CPF:"
+            placeholder="Digite seu CPF"
+            v-model="formState.cpf"
+          />
+          <MeuComponente
+            label="Endereço:"
+            placeholder="Digite seu endereço"
+            v-model="formState.endereco"
+          />
 
-        <button type="submit">Cadastrar</button>
-      </form>
-    </main>
+          <button type="submit">Cadastrar</button>
+        </form>
+      </main>
 
-    <DadosCadastrados v-else :formData="formState" />
+      <DadosCadastrados v-else :formData="formState" />
+    </div>
+    <footer class="footer">
+      <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
+      <p>
+        Meu GitHub:
+        <a href="https://github.com/LevyTavares" target="_blank">fnuf</a>
+      </p>
+    </footer>
   </div>
-  <footer class="footer">
-    <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
-    <p>Meu GitHub: <a href="https://github.com/LevyTavares" target="_blank">fnuf</a></p>
-  </footer>
 </template>
 
 <style scoped>
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
+  width: 100%;
   text-align: center;
   background-color: #1e2a38;
   color: white;
@@ -79,12 +91,13 @@ const handleSubmit = (event) => {
 }
 
 .centraliza {
+  flex: 1;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 2rem;
   background: linear-gradient(135deg, #121212, #1e1e1e);
+  padding: 2rem 0;
 }
 
 main {
@@ -125,11 +138,11 @@ button:hover {
 }
 
 .footer {
+  width: 100%;
   text-align: center;
   background-color: #1e2a38;
   color: var(--color-text);
   padding: 1.5rem 0;
-  width: 100%;
   border-top: 1px solid var(--color-border);
 }
 

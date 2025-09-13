@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: 'DadosCadastrados',
+  name: "DadosCadastrados",
   props: {
     formData: {
       type: Object,
@@ -39,21 +39,39 @@ export default {
 
 <style scoped>
 .display-container {
-  background: linear-gradient(135deg, #ffffff, #e0e0e0);
+  background: linear-gradient(135deg, #23272f 60%, #282828 100%);
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  color: #333;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  width: 340px;
+  color: #eee;
 }
 
 h2 {
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: #28a745;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .data-item {
   margin-bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  background: #222;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+strong {
+  color: #28a745;
+  min-width: 90px;
+}
+
+span {
+  color: #fff;
+  font-weight: 400;
 }
 </style>
