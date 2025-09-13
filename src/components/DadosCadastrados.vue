@@ -73,5 +73,10 @@ strong {
 span {
   color: #fff;
   font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px; /* ajuste conforme necessário */
+  display: block;
 }
 </style>

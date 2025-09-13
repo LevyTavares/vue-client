@@ -149,4 +149,14 @@ button:hover {
 .footer a {
   color: #007bff;
 }
+
+span {
+  color: #fff;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px; /* ajuste conforme necessário */
+  display: block;
+}
 </style>
